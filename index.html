@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Bento Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Expandable Floating Navbar -->
-    <nav class="floating-nav">
+    <!-- Floating Navbar -->
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-header">
-                <a href="#" class="nav-logo">Portfolio</a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <a href="#" class="nav-logo">BentoFolio</a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#about"><i class="fas fa-user"></i> About</a>
+                <a href="#work"><i class="fas fa-briefcase"></i> Work</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
             </div>
             
-            <div class="nav-links">
-                <a href="#"><i class="fas fa-home"></i> Home</a>
-                <a href="#"><i class="fas fa-user"></i> About</a>
-                <a href="#"><i class="fas fa-briefcase"></i> Work</a>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
+            <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
         </div>
     </nav>
 
-    <!-- Name and Photo Section -->
-    <div class="hero-section">
-        <div class="name-box">
-            <h1>Alex Johnson</h1>
-            <p class="title">UI/UX Designer & Developer</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-dribbble"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+    <!-- Bento Grid -->
+    <main class="bento-grid">
+        <!-- Row 1 -->
+        <div class="bento-card profile-card">
+            <div class="profile-content">
+                <svg class="profile-img" viewBox="0 0 200 200">
+                    <rect width="100%" height="100%" fill="#F0EDE1"/>
+                    <circle cx="100" cy="80" r="40" fill="#8B7355"/>
+                    <circle cx="100" cy="180" r="60" fill="#8B7355"/>
+                    <circle cx="80" cy="70" r="5" fill="#F5F5DC"/>
+                    <circle cx="120" cy="70" r="5" fill="#F5F5DC"/>
+                    <path d="M80 100 Q100 120 120 100" stroke="#F5F5DC" stroke-width="3" fill="none"/>
+                </svg>
+                <div class="profile-info">
+                    <h1>Alex Johnson</h1>
+                    <p>UI/UX Designer</p>
+                </div>
             </div>
         </div>
-        
-        <div class="photo-container">
-            <div class="photo-frame">
-                <img src="https://via.placeholder.com/400x500/F5F5DC/8B7355?text=Profile+Photo" alt="Profile Photo" class="profile-photo">
-            </div>
-        </div>
-    </div>
 
-    
+        <div class="bento-card about-card" id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>Creative designer with 5+ years experience crafting beautiful digital experiences. Passionate about user-centered design.</p>
+            <div class="skills">
+                <span>Figma</span>
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="bento-card featured-work" id="work">
+            <h2><i class="fas fa-star"></i> Featured Work</h2>
+            <div class="work-grid">
+                <div class="work-item"></div>
+                <div class="work-item"></div>
+                <div class="work-item"></div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="bento-card contact-card" id="contact">
+            <h2><i class="fas fa-paper-plane"></i> Get In Touch</h2>
+            <div class="contact-methods">
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-dribbble"></i> Dribbble</a>
+                <a href="#"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+
+        <div class="bento-card quote-card">
+            <blockquote>
+                "Simplicity is the ultimate sophistication"
+                <cite>- Leonardo da Vinci</cite>
+            </blockquote>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
